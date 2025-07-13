@@ -1,24 +1,30 @@
 const data = {
   skills: [
     { title: "Unity 3D", desc: "100+ VR modules", img: "images/unity.png" },
-    { title: "Oculus Quest 3", desc: "Standalone VR hardware", img: "images/oculus.png" }
+    { title: "Oculus Quest 3", desc: "Standalone VR hardware", img: "images/oculus.png" },
+    { title: "C#", desc: "Programming language", img: "images/csharp.png" },
+    { title: "Python", desc: "Computer Vision & ML", img: "images/python.png" }
   ],
   experience: [
-    { title: "Harita Techserv", desc: "XR Developer • Jul 2023 – Present", img: "images/tvs1.png" },
-    { title: "TVS Motor Internship", desc: "YOLOv3 & VR Dev", img: "images/tvs2.png" }
+    { title: "Harita Techserv", desc: "XR Developer • Jul 2023 – Present", img: "images/harita.png" },
+    { title: "TVS Motor Internship", desc: "YOLOv3 & VR Dev", img: "images/tvs.png" }
   ],
   education: [
     { title: "B.E. in CSE", desc: "Adhiyamaan College • CGPA:8.06", img: "images/college.png" }
   ]
 };
 
-const state = { skills: 0, experience: 0, education: 0 };
+let indices = {
+  skills: 0,
+  experience: 0,
+  education: 0
+};
 
 function animateCard(type, newContent) {
   const card = document.getElementById(`card-${type}`);
   card.classList.add('fade-out');
   setTimeout(() => {
-    card.style.backgroundImage = `url('${newContent.img}')`;
+    card.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${newContent.img}')`;
     card.innerHTML = `<h3>${newContent.title}</h3><p>${newContent.desc}</p>`;
     card.classList.remove('fade-out');
     card.classList.add('fade-in');
@@ -26,60 +32,39 @@ function animateCard(type, newContent) {
   }, 300);
 }
 
-function renderPanel(type) {
-  const idx = state[type];
-  const item = data[type][idx];
-  animateCard(type, item);
+function showCard(type) {
+  const idx = indices[type];
+  animateCard(type, data[type][idx]);
 }
 
+// Initialize all cards on load
+window.addEventListener('load', () => {
+  for (const type of Object.keys(data)) {
+    showCard(type);
+  }
+});
+
+// Button click handlers
 document.querySelectorAll('.btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    const type = btn.dataset.target;
-    const max = data[type].length;
-    state[type] = btn.classList.contains('next')
-      ? (state[type] + 1) % max
-      : (state[type] - 1 + max) % max;
-    renderPanel(type);
+    const type = btn.getAttribute('data-target');
+    if (btn.classList.contains('next')) {
+      indices[type] = (indices[type] + 1) % data[type].length;
+    } else {
+      indices[type] = (indices[type] - 1 + data[type].length) % data[type].length;
+    }
+    showCard(type);
   });
 });
 
-// Dark mode
-const toggle = document.getElementById('darkToggle');
-toggle.onclick = () => {
+// Dark mode toggle
+const darkToggle = document.getElementById('darkToggle');
+darkToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-};
-
-// Initial render
-Object.keys(data).forEach(renderPanel);
-// Touch Swipe Support
-function addSwipeListener(containerId, type) {
-  const container = document.getElementById(containerId);
-  let startX = 0;
-  let endX = 0;
-  const threshold = 50; // minimum swipe distance
-
-  container.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  });
-
-  container.addEventListener('touchend', e => {
-    endX = e.changedTouches[0].clientX;
-    const diffX = endX - startX;
-    if (Math.abs(diffX) > threshold) {
-      if (diffX > 0) {
-        // Swipe right = previous
-        state[type] = (state[type] - 1 + data[type].length) % data[type].length;
-      } else {
-        // Swipe left = next
-        state[type] = (state[type] + 1) % data[type].length;
-      }
-      renderPanel(type);
-    }
-  });
-}
-
-// Add swipe listeners for all cards
-addSwipeListener('card-skills', 'skills');
-addSwipeListener('card-experience', 'experience');
-addSwipeListener('card-education', 'education');
+  // Change toggle icon
+  if (document.body.classList.contains('dark')) {
+    darkToggle.textContent = '☀️';
+  } else {
+    darkToggle.textContent = '🌙';
+  }
+});

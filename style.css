@@ -20,18 +20,23 @@ body.dark {
 /* Sidebar timeline */
 .sidebar {
   position: fixed;
-  left: 0;
+  right: 0;                      /* right side */
   top: 50%;
   transform: translateY(-50%);
-  background: var(--card-bg);
+  background: transparent !important; /* transparent */
+  box-shadow: none !important;
+  border: none !important;
   padding: 1rem;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 0 0 10px; /* rounded left corners */
   z-index: 999;
 }
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.sidebar ul, .sidebar li {
+  background: transparent !important; /* no background on list */
 }
 .sidebar a {
   display: block;
@@ -40,9 +45,14 @@ body.dark {
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3); /* subtle shadow for readability */
 }
 .sidebar a:hover {
   color: var(--accent);
+}
+.sidebar::before,
+.sidebar::after {
+  background: none !important;
 }
 
 /* Dark toggle */
@@ -133,10 +143,9 @@ main {
   .sidebar {
     top: auto;
     bottom: 10px;
-    left: 10px;
+    right: 10px;
     transform: none;
     border-radius: 10px;
-    background: var(--card-bg);
   }
   .sidebar ul {
     display: flex;
