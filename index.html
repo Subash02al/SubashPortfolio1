@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Subash AL – XR Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+</head>
+<body>
+
+<!-- Vertical Timeline Sidebar -->
+<aside class="sidebar">
+  <ul>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+</aside>
+
+<!-- Dark Mode Toggle -->
+<div class="dark-toggle" id="darkToggle">🌙</div>
+
+<header class="hero">
+  <h1>Subash AL</h1>
+  <p>XR Developer @ Harita Techserv • Hosur</p>
+</header>
+
+<main>
+
+  <!-- Skills -->
+  <section id="skills" class="panel" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="swiper">
+      <button class="btn prev" data-target="skills">⟨</button>
+      <div class="card fade" id="card-skills"></div>
+      <button class="btn next" data-target="skills">⟩</button>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="panel" data-aos="fade-up">
+    <h2>Experience</h2>
+    <div class="swiper">
+      <button class="btn prev" data-target="experience">⟨</button>
+      <div class="card fade" id="card-experience"></div>
+      <button class="btn next" data-target="experience">⟩</button>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="panel" data-aos="fade-up">
+    <h2>Education</h2>
+    <div class="swiper">
+      <button class="btn prev" data-target="education">⟨</button>
+      <div class="card fade" id="card-education"></div>
+      <button class="btn next" data-target="education">⟩</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({ duration: 800 });
+</script>
+<script src="script.js"></script>
+</body>
+</html>
