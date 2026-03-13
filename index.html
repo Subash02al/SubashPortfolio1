@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subash AL – App Developer & Creator</title>
+
+    <!-- Google Fonts: Outfit (Display) and Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Custom Animated Cursor -->
+    <div class="cursor" id="custom-cursor"></div>
+    <div class="cursor-follower" id="custom-cursor-follower"></div>
+
+    <!-- Navigation / Header -->
+    <header class="glass-nav">
+        <div class="logo">Subash AL.</div>
+        <nav>
+            <a href="#about" class="hover-link">About</a>
+            <a href="#projects" class="hover-link">Projects</a>
+            <a href="#stack" class="hover-link">Stack</a>
+            <a href="#contact" class="hover-link">Connect</a>
+        </nav>
+        <button id="theme-toggle" class="hover-link" aria-label="Toggle Theme">
+            <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="display: none;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+        </button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="ambient-orb"></div>
+            <div class="hero-content">
+                <h2 class="pre-title gs-reveal">App Developer & Creator</h2>
+                <h1 class="hero-title gs-reveal">
+                    Building <span class="gradient-text type-fun">fun</span>,<br>
+                    <span class="gradient-text type-private">private</span> & <span
+                        class="gradient-text type-addictive">addictive</span><br>
+                    mobile experiences.
+                </h1>
+                <p class="hero-subtitle gs-reveal">Based in India. Creator of TUMI and addictive Sudoku puzzles.</p>
+                <div class="hero-cta gs-reveal">
+                    <a href="#projects" class="btn primary-btn hover-link">View My Work</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container section-inner">
+                <div class="about-grid">
+                    <div class="about-text gs-reveal">
+                        <h2 class="section-title">Hello, <br>I'm Subash.</h2>
+                        <p>I build apps that people actually want to use. Not enterprise bloatware, but focused,
+                            well-designed mobile experiences.</p>
+                        <p>My journey started with creating <strong>TUMI</strong>, an anonymous messaging platform built
+                            on the belief that digital privacy can still be playful. Now, I'm channeling my love for
+                            pure logic into crafting the ultimate, frictionless <strong>Sudoku</strong> experience.</p>
+                        <p class="highlight-text">I believe tech should feel <em>personal</em>, <em>creative</em>, and
+                            <em>immediate</em>.
+                        </p>
+                    </div>
+                    <div class="about-visual gs-reveal">
+                        <!-- Abstract shapes representing code / creation -->
+                        <div class="glass-orb orb-1" data-tilt data-tilt-glare data-tilt-max-glare="0.5"></div>
+                        <div class="glass-orb orb-2" data-tilt data-tilt-glare data-tilt-max-glare="0.5"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title center gs-reveal">Selected Work</h2>
+
+                <div class="bento-grid">
+
+                    <!-- App 1: TUMI -->
+                    <div class="project-card tumi-card hover-link" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.3">
+                        <div class="card-inner">
+                            <div class="project-header">
+                                <h3>TUMI</h3>
+                                <span class="tag">Live App</span>
+                            </div>
+                            <p class="project-desc">An anonymous chat platform prioritizing privacy without sacrificing
+                                the fun of social interaction. No profiles. No history. Just the moment.</p>
+
+                            <div class="tumi-visual">
+                                <div class="chat-bubble left blurred-bubble">Hey...</div>
+                                <div class="chat-bubble right">Who's this? 👀</div>
+                                <div class="chat-bubble left blurred-bubble">A secret!</div>
+                            </div>
+
+                            <div class="card-footer">
+                                <span class="tech-pill">React Native</span>
+                                <span class="tech-pill">Node.js</span>
+                                <span class="tech-pill">WebSockets</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- App 2: Sudoku -->
+                    <div class="project-card sudoku-card hover-link" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.3">
+                        <div class="card-inner">
+                            <div class="project-header">
+                                <h3>Modern Sudoku</h3>
+                                <span class="tag in-progress">In Development</span>
+                            </div>
+                            <p class="project-desc">A pure, distraction-free Sudoku app designed for flow state.
+                                Featuring smart hints, beautiful vibrant themes, and satisfying micro-interactions.</p>
+
+                            <div class="sudoku-visual" id="sudoku-easter-egg">
+                                <div class="s-grid">
+                                    <div class="s-cell">5</div>
+                                    <div class="s-cell">3</div>
+                                    <div class="s-cell empty"></div>
+                                    <div class="s-cell">6</div>
+                                    <div class="s-cell empty"></div>
+                                    <div class="s-cell empty"></div>
+                                    <div class="s-cell empty"></div>
+                                    <div class="s-cell">9</div>
+                                    <div class="s-cell">8</div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <span class="tech-pill">React</span>
+                                <span class="tech-pill">Zustand</span>
+                                <span class="tech-pill">Algorithmic Gen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section id="stack" class="stack-section">
+            <div class="container context-container gs-reveal">
+                <h2 class="section-title center">The Sandbox</h2>
+                <p class="center" style="color: var(--text-muted); margin-bottom: 3rem;">Tools I use to bring ideas to
+                    life</p>
+
+                <div class="stack-marquee-container">
+                    <div class="stack-marquee">
+                        <!-- Duplicated for seamless scrolling -->
+                        <div class="stack-item">React Native</div>
+                        <div class="stack-item">JavaScript</div>
+                        <div class="stack-item">TypeScript</div>
+                        <div class="stack-item">Node.js</div>
+                        <div class="stack-item">Figma</div>
+                        <div class="stack-item">Tailwind</div>
+                        <div class="stack-item">Firebase</div>
+                        <div class="stack-item">GSAP</div>
+                        <!-- Duplicate -->
+                        <div class="stack-item">React Native</div>
+                        <div class="stack-item">JavaScript</div>
+                        <div class="stack-item">TypeScript</div>
+                        <div class="stack-item">Node.js</div>
+                        <div class="stack-item">Figma</div>
+                        <div class="stack-item">Tailwind</div>
+                        <div class="stack-item">Firebase</div>
+                        <div class="stack-item">GSAP</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="footer-section">
+        <div class="container gs-reveal">
+            <h2 class="closing-title">Have a wild idea?</h2>
+            <p style="color: var(--text-muted); font-size: 1.2rem; margin-bottom: 2rem;">Let's build something addictive
+                together.</p>
+            <a href="mailto:hello@subash.dev" class="btn primary-btn hover-link">Say Hello</a>
+
+            <div class="social-links">
+                <a href="#" class="hover-link">Twitter / X</a>
+                <a href="https://github.com/subash02al" class="hover-link">GitHub</a>
+                <a href="https://in.linkedin.com/in/al-subash-90404024b" class="hover-link">LinkedIn</a>
+            </div>
+
+            <p class="copyright">© 2026 Subash AL. Designed with intent.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Vanilla Tilt for 3D Cards -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <!-- GSAP for Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Logic -->
+    <script src="script.js"></script>
+</body>
+
+</html>
