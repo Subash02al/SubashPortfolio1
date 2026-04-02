@@ -15,5 +15,5 @@ Clean, addictive Sudoku puzzle app for entertainment.
 - Features: themes, hints, timer, daily challenges, etc.
 - Tech stack: Unity
 
-Built in Jamshedpur, India.  
+Built in Tamil Nadu, India.  
 Let's connect: alsubash0@gmail.com
